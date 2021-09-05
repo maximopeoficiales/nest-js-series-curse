@@ -22,6 +22,10 @@ export class ConfigService {
         } else {
             this.envConfig = {
                 PORT: process.env.PORT,
+                DB_HOST: process.env.DB_HOST,
+                DB_NAME: process.env.DB_NAME,
+                DB_USER: process.env.DB_USER,
+                DB_PASSWORD: process.env.DB_PASSWORD,
                 KEY_AUTH: process.env.KEY_AUTH,
             }
         }
