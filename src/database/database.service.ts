@@ -1,12 +1,9 @@
-import { Injectable } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Config } from 'src/config/config.key';
 import { ConfigModule } from 'src/config/config.module';
 import { ConfigService } from 'src/config/config.service';
 import { ConnectionOptions } from 'typeorm';
 
-// @Injectable()
-// export class DatabaseService {}
 
 export const databaseProviders = [
     TypeOrmModule.forRootAsync({
@@ -14,7 +11,7 @@ export const databaseProviders = [
         inject: [ConfigService],
         async useFactory(config: ConfigService) {
             return {
-                ssl: false,
+                ssl: true,
                 type: "postgres",
                 host: config.get(Config.DB_HOST),
                 username: config.get(Config.DB_USER),
