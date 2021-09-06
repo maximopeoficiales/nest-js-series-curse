@@ -10,7 +10,7 @@ import { RoleModule } from './modules/role/role.module';
 
 @Module({
   imports: [ConfigModule, DatabaseModule, UserModule, RoleModule,],
-  controllers: [AppController],
+  controllers: [],
   providers: [AppService],
 })
 export class AppModule {
