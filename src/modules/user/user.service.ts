@@ -9,7 +9,7 @@ import { UserRepository } from './repositorys/user.repository';
 @Injectable()
 export class UserService {
     constructor(
-        @InjectRepository(User)
+        @InjectRepository(UserRepository)
         private readonly _userRepository: UserRepository
     ) {
 
