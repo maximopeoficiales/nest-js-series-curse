@@ -35,7 +35,7 @@ export class UserService {
         const details = new UserDetails();
         user.details = details;
 
-        const repo = await getConnection().getRepository(Role);
+        const repo =  getConnection().getRepository(Role);
         const defaultRole = await repo.findOne({ where: { name: "GENERAL" } });
         // le agregamos un rol por defecto
         user.roles = [defaultRole];
